@@ -5,13 +5,21 @@
   "main": "server.js",
   "scripts": {
     "start": "NODE_ENV=production node server",
-    "dev":"nodemon server"
+    "dev": "nodemon server"
   },
   "author": "Shady Hossam",
   "license": "MIT",
   "dependencies": {
+    "@maptiler/client": "^2.2.0",
+    "colors": "^1.4.0",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "geocoder": "^0.1.0",
+    "mongodb": "^6.13.0",
+    "mongoose": "^8.9.5",
+    "morgan": "^1.10.0",
+    "node-geocoder": "^4.4.1",
+    "slugify": "^1.6.6"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
