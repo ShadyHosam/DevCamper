@@ -10,25 +10,32 @@ const geocoder = require('./utils/geocoder');
 
 
 dotenv.config({path:'./config/config.env'});
-const bootcamps = require('./routes/bootcamps');
-const app = express();
-
-app.use(express.json());
 
 
+// Connect to the database
 connectDB();
+
+// Route Files
+const bootcamps = require('./routes/bootcamps');
+const courses = require('./routes/courses');
+
+
+const app = express();
 
 
 // Body Parser 
+app.use(express.json());
+
 
 // Dev logging middleware
-
 if (process.env.NODE_ENV === 'development'){
     app.use(morgan('dev'));
 }
     
+// Routers
 
 app.use('/api/v1/bootcamps',bootcamps);
+app.use('/api/v1/courses',courses);
 
 
 app.use(errorHandler);
